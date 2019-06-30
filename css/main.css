@@ -745,8 +745,10 @@ form.registro label {
 h4 {
     text-transform: uppercase;
     text-align: center;
+    border-top: 2px solid #fe4918;
     border-bottom: 2px solid #fe4918;
-    padding-bottom: 10px;
+    padding: 10px 0;
+    margin: 0;
     font-size: 1.2em;
 }
 
@@ -780,7 +782,7 @@ h4 {
 }
 .contenido-dia {
     padding: 20px;
-    /*display: none;*/
+    display: none;
 }
 @media only screen and (min-width: 768px) {
     .contenido-dia > div {
@@ -791,6 +793,9 @@ h4 {
 }
 .contenido-dia > div p {
     text-align: left;
+}
+.contenido-dia p {
+    text-transform: uppercase;
 }
 .contenido-dia > div label {
     display: block;
@@ -810,9 +815,16 @@ h4 {
     text-transform: uppercase;
 }
 .resumen .extras {
-    float: left;
-    width: 50%;
     padding: 30px;
+    border-bottom: 1px solid #fe4918;
+}
+@media only screen and (min-width: 768px) {
+    .resumen .extras {
+        float: left;
+        width: 50%;
+        border-bottom: none;
+        
+    }
 }
 .extras .orden {
     text-align: left;
@@ -821,14 +833,43 @@ h4 {
 .extras .orden input {
     margin: 10px 0 0 0;
 }
+.extras .orden select {
+    margin: 10px 0;
+}
+@media only screen and (min-width: 768px) {
+    .resumen .total {
+        float: right;
+        width: 50%;
+        border: 1px solid #fe4918;
+    }
+}
 .resumen .total {
-    float: right;
-    width: 50%;
     padding: 30px;
+}
+.resumen .total p {
+   text-align: center;
 }
 .resumen input {
     display: block;
     margin: 10px auto;
+}
+#lista-productos {
+    background-color: #e1e1e1;
+    padding: 20px;
+    display: none;
+}
+#suma-total {
+    text-align: center;
+    font-size: 2em;
+    color: #fe4918;
+}
+input [disabled].button {
+    opacity: 0.5;
+}
+#error {
+    clear: both;
+    padding: 20px;
+    text-align: center;
 }
 
 
