@@ -6,6 +6,18 @@
     // Cuando el contenido del DOM esté cargado de ejecuta la función
     document.addEventListener('DOMContentLoaded', function() {
 
+        var map = L.map('mapa').setView([40.409665, -3.690329], 17);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([40.409665, -3.690329]).addTo(map)
+            /*.bindPopup('Front-End-Camp 2019 <br> Pases ya disponibles')
+            .openPopup()*/
+            .bindTooltip('Front-End-Camp 2019 <br> Pases ya disponibles')
+            .openTooltip();
+
         console.log('La página se ha cargado correctamente');
 
         // Campos registro usuario
@@ -35,8 +47,8 @@
         // Total a pagar
         var divTotal = document.getElementById('suma-total');
 
-        // Cuando el usuario haga click en el botón calcular se ejecuta la función calcularMontos
-        calcular.addEventListener('click', calcularMontos);
+        // Cuando el usuario haga click en el botón calcular se ejecuta la función calcularPago
+        calcular.addEventListener('click', calcularPago);
 
         divPaseDia.addEventListener('blur', mostrarDias);
         divPaseDosDias.addEventListener('blur', mostrarDias);
@@ -71,7 +83,7 @@
             }
         }
 
-        function calcularMontos(event) {
+        function calcularPago(event) {
             // Nos aseguramos que calcular se comunica correctamente con la función
             event.preventDefault();
             console.log('Has hecho click en CALCULAR');
