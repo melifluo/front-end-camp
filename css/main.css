@@ -325,7 +325,14 @@ p.slogan span {
 /* BARRA */
 .barra {
     background-color: #353535;
-    padding: 20px 0;
+    padding: 15px 0;
+}
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
 }
 .logo {
     width: 80%;
@@ -355,7 +362,7 @@ nav.navegacion-principal a {
     width: 100%;
     display: block;
     text-align: center;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 nav.navegacion-principal a:hover {
     background-color: #fe4918;
