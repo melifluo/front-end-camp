@@ -170,6 +170,9 @@
 
 $(function() {
 
+    // Lettering
+    $('.nombre-web').lettering();
+
     // Programa de Conferencias
     $('.programa-evento .info-curso:first').show();
     $('.menu-programa a:first').addClass('activo');
@@ -201,7 +204,6 @@ $(function() {
         $('#horas').html(event.strftime('%H'));
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
-        console.log(event);
     });
 
 });

@@ -198,6 +198,53 @@ ul {
     text-align: center;
 }
 
+/* LETTERING */
+h1.nombre-web span {
+    position: relative;
+    text-shadow: 0 0 30px black;
+}
+@media only screen and (min-width: 992px) {
+    .char1{ 
+        color: #fe4918;
+        top:5px; right: 20px;
+    }
+    .char2{ 
+        top:0px; left: -20px;
+    }
+    .char3{ 
+        top:-5px; right: 20px;
+    }
+    .char4{ 
+        top:0px; left: -20px;
+    }
+    .char5{ 
+        top:5px; right: 20px;
+    }
+    .char6{ 
+        color: #fe4918;
+        top:0; left: -20px;
+    }
+    .char7{ 
+        top:-5px; right: 20px;
+    }
+    .char8{ 
+        top:0px; left: -20px;
+    }
+    .char9{ 
+        color: #fe4918;
+        top:5px; right: 20px;
+        }
+    .char10 {
+        top:0px; left: -20px;  
+    }
+    .char11 {
+    top:-5px; right: 20px;
+    }
+    .char12 {
+        top:0px; left: -20px;  
+    }
+}
+
 /* HEADER */
 .hero {
     background-image: url(../img/encabezado.jpg);
@@ -259,11 +306,11 @@ p.ciudad {
 }
 h1.nombre-web {
     font-family: 'PT Sans', sans-serif;
-    font-size: 5.9vw;
+    font-size: 9vw;
 }
 @media only screen and (min-width: 768px) {
     h1.nombre-web {
-        font-size: 9vw;
+        font-size: 7vw;
         line-height: 1;
         margin: 0;
     }
