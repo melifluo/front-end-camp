@@ -173,10 +173,9 @@ $(function() {
     // Lettering
     $('.nombre-web').lettering();
 
-    // Menu barra de navegación fijo
+    // Menú barra de navegación fijo
     var windowHeight = $(window).height();
     var barraHeight = $('.barra').height();
-    console.log(barraHeight);
 
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
@@ -188,6 +187,11 @@ $(function() {
             $('.barra').removeClass('fixed');
             $('body').css({'margin-top': '0px'});
         }
+    });
+
+    // Menú responsive
+    $('.menu-movil').on('click', function() {
+        $('.navegacion-principal').slideToggle();
     });
 
     // Programa de Conferencias

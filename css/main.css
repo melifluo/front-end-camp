@@ -351,6 +351,7 @@ p.slogan span {
 /* NAVEGACIÓN PRINCIPAL */
 nav.navegacion-principal {
     display: none;
+    width: 100%;
 }
 nav.navegacion-principal a {
     font-family: 'Oswald', sans-serif;
@@ -362,7 +363,8 @@ nav.navegacion-principal a {
     width: 100%;
     display: block;
     text-align: center;
-    /*margin-bottom: 20px;*/
+    padding: 5px 0;
+    margin-bottom: 5px;
 }
 nav.navegacion-principal a:hover {
     background-color: #fe4918;
