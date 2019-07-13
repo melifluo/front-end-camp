@@ -6,19 +6,23 @@
     // Cuando el contenido del DOM esté cargado de ejecuta la función
     document.addEventListener('DOMContentLoaded', function() {
 
-        var map = L.map('mapa').setView([40.409665, -3.690329], 17);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        L.marker([40.409665, -3.690329]).addTo(map)
-            /*.bindPopup('Front-End-Camp 2019 <br> Pases ya disponibles')
-            .openPopup()*/
-            .bindTooltip('Front-End-Camp 2019 <br> Pases ya disponibles')
-            .openTooltip();
-
         console.log('La página se ha cargado correctamente');
+
+        var mapa = document.querySelector('#mapa');
+
+        if(mapa) {
+            var map = L.map('mapa').setView([40.409665, -3.690329], 17);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([40.409665, -3.690329]).addTo(map)
+                /*.bindPopup('Front-End-Camp 2019 <br> Pases ya disponibles')
+                .openPopup()*/
+                .bindTooltip('Front-End-Camp 2019 <br> Pases ya disponibles')
+                .openTooltip();
+        }
 
         // Campos registro usuario
         var divNombre = document.getElementById('nombre');
@@ -48,16 +52,18 @@
         var divTotal = document.getElementById('suma-total');
 
         // Cuando el usuario haga click en el botón calcular se ejecuta la función calcularPago
-        calcular.addEventListener('click', calcularPago);
+        if(calcular) {
+            calcular.addEventListener('click', calcularPago);
 
-        divPaseDia.addEventListener('blur', mostrarDias);
-        divPaseDosDias.addEventListener('blur', mostrarDias);
-        divPaseCompleto.addEventListener('blur', mostrarDias);
+            divPaseDia.addEventListener('blur', mostrarDias);
+            divPaseDosDias.addEventListener('blur', mostrarDias);
+            divPaseCompleto.addEventListener('blur', mostrarDias);
 
-        divNombre.addEventListener('blur', validarCampos);
-        divApellido.addEventListener('blur', validarCampos);
-        divEmail.addEventListener('blur', validarCampos);
-        divEmail.addEventListener('blur', validarEmail);
+            divNombre.addEventListener('blur', validarCampos);
+            divApellido.addEventListener('blur', validarCampos);
+            divEmail.addEventListener('blur', validarCampos);
+            divEmail.addEventListener('blur', validarEmail);
+        }
 
         function validarCampos() {
             if(this.value == '') {
@@ -156,6 +162,31 @@
             }
 
         }
-    }); 
+
+    }); // DOM Content Loaded
 
 })();
+
+
+$(function() {
+
+    // Programa de Conferencias
+    $('.programa-evento .info-curso:first').show();
+    $('.menu-programa a:first').addClass('activo');
+
+    // Función que se ejecuta al pinchar sobre uno de los enlaces del PROGRAMA DEL EVENTO (Talleres, Conferencias, Seminarios)
+    $('.menu-programa a').on('click', function() {
+
+        $('.menu-programa a').removeClass('activo');
+        $(this).addClass('activo');
+
+        $('.info-curso').hide();
+
+        var enlace = $(this).attr('href');
+        $(enlace).fadeIn(1000);
+
+        return false;
+
+    });
+
+});
